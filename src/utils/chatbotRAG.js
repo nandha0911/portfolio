@@ -110,7 +110,7 @@ const knowledgeBase = [
     keywords: ['contact', 'email', 'phone', 'reach', 'hire', 'get in touch', 'linkedin', 'github', 'mobile', 'call', 'location', 'where are you based'],
     questionExamples: ['how can i contact you', 'what is your email', 'what is your phone number', 'give me your linkedin and github', 'where are you located'],
     generateAnswer: () => ({
-      text: `📞 **Contact Information for Nandha R:**\n\n• **Email:** [${resumeData.personal.email}](mailto:${resumeData.personal.email})\n• **Phone:** [${resumeData.personal.phone}](tel:${resumeData.personal.phone.replace(/[^0-9+]/g, '')})\n• **Location:** ${resumeData.personal.location}\n• **LinkedIn:** [${resumeData.personal.linkedinUsername}](${resumeData.personal.linkedin})\n• **GitHub:** [${resumeData.personal.githubUsername}](${resumeData.personal.github})\n\nFeel free to send a message through the contact form below!`,
+      text: `📞 **Contact & Location Details for Nandha R:**\n\n• **Current Location (Workplace):** ${resumeData.personal.currentLocation} (Data Scientist @ Gradtwin)\n• **Native Location (Hometown):** ${resumeData.personal.nativeLocation}\n• **Email:** [${resumeData.personal.email}](mailto:${resumeData.personal.email})\n• **Phone:** [${resumeData.personal.phone}](tel:${resumeData.personal.phone.replace(/[^0-9+]/g, '')})\n• **LinkedIn:** [${resumeData.personal.linkedinUsername}](${resumeData.personal.linkedin})\n• **GitHub:** [${resumeData.personal.githubUsername}](${resumeData.personal.github})\n\nFeel free to send a message through the contact form below!`,
       action: { label: 'Open Contact Form', targetId: 'contact' }
     })
   },
