@@ -1,0 +1,77 @@
+{
+  "name": "Nandha R",
+  "title": "Data Scientist",
+  "location": "Dharmapuri, Tamil Nadu",
+  "phone": "+91-9080086811",
+  "email": "krnandha143@gmail.com",
+  "linkedin": "https://linkedin.com/in/nandha-k-r",
+  "github": "https://github.com/nandha0911",
+  "objective": "To work in an environment offering challenging career opportunities where I can apply and enhance my skills for solving diverse technical problems.",
+  "education": [
+    {
+      "degree": "Bachelor of Engineering in Computer Science and Engineering",
+      "institution": "Vinayaka Mission's Kirupananda Variyar Engineering College, Salem, Tamil Nadu",
+      "duration": "2022–2026",
+      "percentage": "73.76%"
+    },
+    {
+      "degree": "Higher Secondary School Examination",
+      "institution": "Government Higher Secondary School, Salem, Tamil Nadu",
+      "duration": "2021–2022",
+      "percentage": "52.8%"
+    },
+    {
+      "degree": "Secondary School Examination",
+      "institution": "Government Higher Secondary School, Salem, Tamil Nadu",
+      "duration": "2019–2020",
+      "percentage": "72.5%"
+    }
+  ],
+  "technical_skills": {
+    "programming_languages": ["Java", "Python", "SQL"],
+    "ai_and_ml": ["RAG", "Predictive Modeling", "Regression", "Classification", "Feature Engineering", "Hyperparameter Tuning", "Benchmarking", "EDA", "ChromaDB", "LLM APIs", "Ollama", "Sentence Transformers", "BM25"],
+    "speech_and_nlp": ["Speech Recognition (SR)", "NLP", "Text-to-Speech (TTS)"],
+    "frameworks": ["FastAPI", "Streamlit"]
+  },
+  "experience": [
+    {
+      "role": "Data Scientist",
+      "company": "Gradtwin",
+      "location": "Chennai",
+      "duration": "June 2026 - Present",
+      "responsibilities": [
+        "Architected end-to-end Python data pipelines, performing rigorous EDA on multi-source datasets to uncover actionable business insights for client use cases.",
+        "Developed and optimized predictive modeling workflows—including regression and classification pipelines—improving forecasting accuracy through systematic feature engineering, hyperparameter tuning, and model benchmarking.",
+        "Designed and deployed a production-grade RAG AI chatbot integrating LLM APIs, ChromaDB vector storage, and semantic document retrieval, enabling automated query resolution over large document corpora.",
+        "Cleaned, transformed, and engineered features from complex, high-volume datasets, reducing data preprocessing time and enabling reliable data-driven strategy deployment.",
+        "Collaborated cross-functionally with engineering and product teams to implement ML-driven solutions that directly improved operational efficiency and business outcomes."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "Residential Property Valuation Using Machine Learning",
+      "date": "Feb-2025",
+      "objective": "House price prediction is a widely researched area in the field of data science and machine learning due to its practical importance in the real estate industry. Numerous studies have been conducted to develop models that can accurately estimate property prices based on various factors such as location, area, number of rooms, and nearby amenities.",
+      "description": "Historically, house price approximation was based chiefly on professional assessments, past performances analysis, and manual comparisons. These traditional means, though, tend to bog down when processing the increasing depth and volume of contemporary real estate information. Such is where Machine Learning (ML) prevails by assessing large data collections, discovering elusive patterns, and providing precise forecasting."
+    },
+    {
+      "title": "The Voice Assistant with Desktop Accessibility",
+      "date": "Mar-2026",
+      "objective": "Creating accessible and intuitive technology is crucial for enhancing user experiences in today’s digital world. Our project, AI-Powered Voice Assistant with Desktop Accessibility, harnesses advanced artificial intelligence (AI) to transform how users interact with their desktops.",
+      "description": "The assistant features state-of-the-art Speech Recognition (SR) to seamlessly convert spoken commands into text, and Natural Language Processing (NLP) to understand and interpret these commands. With Text-to-Speech (TTS) technology, it provides clear and responsive voice feedback, delivering a complete hands-free desktop experience."
+    },
+    {
+      "title": "PDF Summarizer Chatbot using RAG",
+      "date": "Jul-2026",
+      "objective": "Paperbrain-PDF-Summarizer-chatbot-using-RAG- A privacy-first, fully offline RAG (Retrieval-Augmented Generation) chatbot for querying PDF documents. Powered by FastAPI, Streamlit, ChromaDB, and local LLMs via Ollama. PaperBrain: AI-Powered PDF Question Answering System.",
+      "description": "This is Local and Private: No documents or chats leave your machine. Embeddings, vector storage, and language generation (via Ollama) run locally. Hybrid Search (Dense + Sparse): Fuses dense vector similarity search (Sentence Transformers) with BM25 keyword matching to deliver highly accurate context retrieval."
+    }
+  ],
+  "certificates": [
+    "Participated in IIIT KOTTAYAM Engineering College on training program (Data Science in Python).",
+    "Participated in KSR Engineering college Paper Presentation 2023 (IOT in military security).",
+    "Won 1st prize in Kongu Engineering college IPL AUCTION 2025.",
+    "Course Completed in Edunet Foundation 2025 (Green Skill and AI)."
+  ]
+}
