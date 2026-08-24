@@ -92,8 +92,12 @@ export function Contact() {
           throw new Error(result.message || 'Failed to submit form through email API');
         }
       } else {
-        // Simulate sending if no API key is configured
-        await new Promise((resolve) => setTimeout(resolve, 900));
+        // Direct email fallback: construct pre-filled mailto link so message opens in Gmail / Mail client
+        const mailSubject = encodeURIComponent(formData.subject || `Portfolio Inquiry from ${formData.name}`);
+        const mailBody = encodeURIComponent(
+          `Hi Nandha,\n\nName: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+        );
+        window.open(`mailto:${resumeData.personal.email}?subject=${mailSubject}&body=${mailBody}`, '_blank');
       }
 
       setFormStatus({
@@ -112,7 +116,7 @@ export function Contact() {
       setFormStatus({
         submitting: false,
         submitted: false,
-        error: err.message || 'Failed to send message. Please try emailing directly.'
+        error: err.message || 'Failed to send message. Please try emailing directly to krnandha143@gmail.com.'
       });
     }
   };
@@ -263,7 +267,7 @@ export function Contact() {
                   Send a Direct Message
                 </h3>
                 <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
-                  Fill in the form below and I will get back to you promptly.
+                  Messages will be delivered directly to <strong className="text-brand-600 dark:text-brand-400 font-mono">krnandha143@gmail.com</strong>.
                 </p>
               </div>
 
