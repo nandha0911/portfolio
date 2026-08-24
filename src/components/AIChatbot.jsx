@@ -8,39 +8,15 @@ import {
   Minimize2,
   Maximize2,
   ArrowRight,
-  User,
-  RefreshCw,
-  Info,
-  Key,
-  Settings,
-  CheckCircle2,
-  AlertCircle,
-  ExternalLink,
   ShieldCheck
 } from 'lucide-react';
 import { generateAIResponse } from '../utils/llmService.js';
 import { resumeData } from '../data/resumeData.js';
 
 export function AIChatbot({ isOpen, onToggle }) {
-  // API Key Configuration State
-  const [apiKey, setApiKey] = useState(() => {
-    const envKey = import.meta.env.VITE_GEMINI_API_KEY || import.meta.env.VITE_OPENAI_API_KEY || '';
-    if (typeof window !== 'undefined') {
-      return localStorage.getItem('portfolio_api_key') || envKey;
-    }
-    return envKey;
-  });
-
-  const [provider, setProvider] = useState(() => {
-    if (typeof window !== 'undefined') {
-      return localStorage.getItem('portfolio_api_provider') || 'gemini';
-    }
-    return 'gemini';
-  });
-
-  const [showSettings, setShowSettings] = useState(false);
-  const [tempApiKey, setTempApiKey] = useState('');
-  const [saveSuccess, setSaveSuccess] = useState(false);
+  // Read API key silently from env or localStorage if available
+  const apiKey = import.meta.env.VITE_GEMINI_API_KEY || import.meta.env.VITE_OPENAI_API_KEY || '';
+  const provider = import.meta.env.VITE_OPENAI_API_KEY ? 'openai' : 'gemini';
 
   const [messages, setMessages] = useState([
     {
@@ -48,8 +24,7 @@ export function AIChatbot({ isOpen, onToggle }) {
       sender: 'bot',
       text: `👋 Hi! I'm **Ask Me**, Nandha R's AI Assistant.\n\nI have complete knowledge of Nandha's **skills, data science experience at Gradtwin, AI/ML projects (PaperBrain RAG, Voice Assistant, Property Valuation), education, and certifications**.\n\nHow can I help you today?`,
       timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-      action: null,
-      provider: apiKey ? (provider === 'gemini' ? 'Google Gemini API' : 'OpenAI API') : 'Local RAG Engine'
+      action: null
     }
   ]);
 
@@ -75,26 +50,6 @@ export function AIChatbot({ isOpen, onToggle }) {
       messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
     }
   }, [messages, isOpen, isTyping]);
-
-  const handleSaveSettings = (e) => {
-    e.preventDefault();
-    const cleanKey = tempApiKey.trim();
-    setApiKey(cleanKey);
-    localStorage.setItem('portfolio_api_key', cleanKey);
-    localStorage.setItem('portfolio_api_provider', provider);
-    setSaveSuccess(true);
-    setTimeout(() => {
-      setSaveSuccess(false);
-      setShowSettings(false);
-    }, 1200);
-  };
-
-  const handleClearApiKey = () => {
-    setApiKey('');
-    setTempApiKey('');
-    localStorage.removeItem('portfolio_api_key');
-    setShowSettings(false);
-  };
 
   const handleSendMessage = async (textToSend) => {
     const text = (textToSend || inputQuery).trim();
@@ -125,8 +80,6 @@ export function AIChatbot({ isOpen, onToggle }) {
         sender: 'bot',
         text: response.text,
         action: response.action,
-        warning: response.warning,
-        provider: response.provider,
         timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
       };
 
@@ -135,7 +88,7 @@ export function AIChatbot({ isOpen, onToggle }) {
       const errorMsg = {
         id: Date.now() + 1,
         sender: 'bot',
-        text: "I encountered an issue generating a live response. Please contact Nandha R directly for more details.",
+        text: "I don't have that information in the portfolio. Please contact the portfolio owner directly for more details.",
         action: { label: 'Contact Nandha R', targetId: 'contact' },
         timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
       };
@@ -152,8 +105,7 @@ export function AIChatbot({ isOpen, onToggle }) {
         sender: 'bot',
         text: `Chat cleared! What else would you like to know about **${resumeData.personal.name}**?`,
         timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-        action: null,
-        provider: apiKey ? `${provider.toUpperCase()} API` : 'Local RAG'
+        action: null
       }
     ]);
   };
@@ -204,11 +156,9 @@ export function AIChatbot({ isOpen, onToggle }) {
             </div>
             <div className="text-left">
               <span className="font-bold text-xs tracking-wide block">Ask Me (AI)</span>
-              <span className="text-[9px] font-mono text-teal-100 flex items-center gap-1">
-                {apiKey ? `🟢 ${provider === 'gemini' ? 'Gemini API' : 'OpenAI'}` : '⚡ Local RAG'}
-              </span>
+              <span className="text-[9px] font-mono text-teal-100 block">AI Portfolio Assistant</span>
             </div>
-            <Sparkles className="w-3.5 h-3.5 text-amber-300 group-hover:rotate-12 transition-transform" />
+            <Sparkles className="w-3.5 h-3.5 text-amber-300 group-hover:rotate-12 transition-transform ml-1" />
           </button>
         )}
       </div>
@@ -233,31 +183,16 @@ export function AIChatbot({ isOpen, onToggle }) {
                 <h3 className="font-bold text-sm leading-none flex items-center gap-1.5">
                   <span>Ask Me</span>
                   <span className="px-1.5 py-0.5 rounded text-[10px] font-mono bg-brand-500/20 text-brand-300 border border-brand-500/30">
-                    {apiKey ? `${provider.toUpperCase()} API` : 'RAG AI'}
+                    AI Assistant
                   </span>
                 </h3>
-                <p className="text-[11px] text-slate-300 mt-1 flex items-center gap-1">
-                  <span className={`w-1.5 h-1.5 rounded-full ${apiKey ? 'bg-emerald-400' : 'bg-cyan-400'}`}></span>
-                  <span>{apiKey ? `Connected: ${provider === 'gemini' ? 'Google Gemini' : 'OpenAI'}` : 'Offline Smart RAG Mode'}</span>
+                <p className="text-[11px] text-slate-300 mt-1">
+                  Portfolio & Resume Guide
                 </p>
               </div>
             </div>
 
             <div className="flex items-center gap-1">
-              {/* API Key Configuration Button */}
-              <button
-                onClick={() => {
-                  setTempApiKey(apiKey);
-                  setShowSettings(!showSettings);
-                }}
-                title="API Key Settings (Gemini / OpenAI)"
-                className={`p-1.5 rounded-lg transition-colors ${
-                  showSettings || apiKey ? 'bg-brand-500/30 text-brand-300' : 'text-slate-300 hover:text-white hover:bg-white/10'
-                }`}
-              >
-                <Key className="w-4 h-4" />
-              </button>
-
               <button
                 onClick={handleClearChat}
                 title="Clear Chat History"
@@ -284,85 +219,11 @@ export function AIChatbot({ isOpen, onToggle }) {
             </div>
           </div>
 
-          {/* Settings Drawer (API Key Config) */}
-          {showSettings && (
-            <div className="p-4 bg-slate-900 border-b border-slate-800 text-white space-y-3 animate-in slide-in-from-top duration-200">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-1.5 text-xs font-bold text-brand-300">
-                  <Key className="w-3.5 h-3.5" />
-                  <span>Configure Live LLM API Key</span>
-                </div>
-                <button
-                  onClick={() => setShowSettings(false)}
-                  className="text-slate-400 hover:text-white text-xs"
-                >
-                  Close
-                </button>
-              </div>
-
-              <p className="text-[11px] text-slate-300 leading-relaxed">
-                Connect your <strong>Google Gemini API Key</strong> (or OpenAI API Key) for live multi-turn LLM reasoning, or leave blank to use the built-in local RAG engine.
-              </p>
-
-              <form onSubmit={handleSaveSettings} className="space-y-2.5">
-                <div className="flex gap-2">
-                  <select
-                    value={provider}
-                    onChange={(e) => setProvider(e.target.value)}
-                    className="px-2.5 py-1.5 rounded-xl bg-slate-800 border border-slate-700 text-xs text-white focus:outline-none focus:ring-1 focus:ring-brand-500"
-                  >
-                    <option value="gemini">Google Gemini (Recommended / Free)</option>
-                    <option value="openai">OpenAI (GPT-4o-mini)</option>
-                  </select>
-                </div>
-
-                <div className="space-y-1">
-                  <input
-                    type="password"
-                    placeholder={`Enter ${provider === 'gemini' ? 'AIzaSy...' : 'sk-...'}`}
-                    value={tempApiKey}
-                    onChange={(e) => setTempApiKey(e.target.value)}
-                    className="w-full px-3 py-1.5 text-xs rounded-xl bg-slate-800 border border-slate-700 text-white focus:outline-none focus:ring-1 focus:ring-brand-500 font-mono"
-                  />
-                </div>
-
-                {saveSuccess && (
-                  <div className="flex items-center gap-1.5 text-[11px] text-emerald-400">
-                    <CheckCircle2 className="w-3.5 h-3.5" />
-                    <span>API Key saved securely in your browser!</span>
-                  </div>
-                )}
-
-                <div className="flex items-center justify-between pt-1">
-                  <button
-                    type="submit"
-                    className="px-3.5 py-1.5 rounded-xl bg-brand-500 hover:bg-brand-600 text-white text-xs font-bold transition-all shadow-sm"
-                  >
-                    Save Key
-                  </button>
-
-                  {apiKey && (
-                    <button
-                      type="button"
-                      onClick={handleClearApiKey}
-                      className="text-[11px] text-rose-400 hover:underline"
-                    >
-                      Disconnect Key
-                    </button>
-                  )}
-                </div>
-              </form>
-            </div>
-          )}
-
           {/* Quick Notice Banner */}
           <div className="px-3.5 py-1.5 bg-brand-500/10 dark:bg-brand-500/15 border-b border-brand-500/20 text-[11px] text-brand-700 dark:text-brand-300 flex items-center justify-between font-mono">
             <span className="flex items-center gap-1.5 truncate">
               <ShieldCheck className="w-3.5 h-3.5 shrink-0 text-emerald-500" />
-              <span className="truncate">Strict Resume-grounded responses</span>
-            </span>
-            <span className="text-[10px] text-slate-400 shrink-0 font-sans">
-              {apiKey ? `Active: ${provider.toUpperCase()}` : 'Local RAG Active'}
+              <span className="truncate">Answers grounded in Nandha's portfolio & resume</span>
             </span>
           </div>
 
@@ -390,13 +251,6 @@ export function AIChatbot({ isOpen, onToggle }) {
                   >
                     {renderFormattedText(msg.text)}
 
-                    {/* Warning if API had an error */}
-                    {msg.warning && (
-                      <div className="text-[10px] text-amber-600 dark:text-amber-400 bg-amber-500/10 p-1.5 rounded-lg border border-amber-500/20">
-                        ⚠️ {msg.warning}
-                      </div>
-                    )}
-
                     {/* Optional Action Button */}
                     {msg.action && (
                       <div className="pt-2 border-t border-slate-100 dark:border-slate-800/80">
@@ -410,19 +264,12 @@ export function AIChatbot({ isOpen, onToggle }) {
                       </div>
                     )}
 
-                    <div className="flex items-center justify-between text-[10px] font-mono pt-1">
-                      {isBot && msg.provider && (
-                        <span className="text-[9px] text-slate-400">
-                          ⚡ {msg.provider}
-                        </span>
-                      )}
-                      <div
-                        className={`ml-auto ${
-                          isBot ? 'text-slate-400' : 'text-teal-100'
-                        }`}
-                      >
-                        {msg.timestamp}
-                      </div>
+                    <div
+                      className={`text-[10px] font-mono text-right ${
+                        isBot ? 'text-slate-400' : 'text-teal-100'
+                      }`}
+                    >
+                      {msg.timestamp}
                     </div>
                   </div>
                 </div>
@@ -439,7 +286,7 @@ export function AIChatbot({ isOpen, onToggle }) {
                   <span className="w-2 h-2 bg-brand-500 rounded-full animate-bounce"></span>
                   <span className="w-2 h-2 bg-cyan-500 rounded-full animate-bounce [animation-delay:0.2s]"></span>
                   <span className="w-2 h-2 bg-electric-500 rounded-full animate-bounce [animation-delay:0.4s]"></span>
-                  <span className="text-[11px] font-mono text-slate-400 ml-1.5">Generating AI answer...</span>
+                  <span className="text-[11px] font-mono text-slate-400 ml-1.5">Thinking...</span>
                 </div>
               </div>
             )}
@@ -470,7 +317,7 @@ export function AIChatbot({ isOpen, onToggle }) {
           >
             <input
               type="text"
-              placeholder={apiKey ? `Ask Gemini/AI anything about Nandha...` : `Ask anything about Nandha's resume...`}
+              placeholder="Ask anything about Nandha's skills, projects..."
               value={inputQuery}
               onChange={(e) => setInputQuery(e.target.value)}
               className="flex-1 px-3.5 py-2 text-xs sm:text-sm rounded-xl bg-slate-100 dark:bg-dark-card border border-slate-200 dark:border-slate-800 focus:outline-none focus:ring-2 focus:ring-brand-500 text-slate-900 dark:text-white"
