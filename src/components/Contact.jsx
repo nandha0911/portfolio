@@ -66,7 +66,7 @@ export function Contact() {
 
     setFormStatus({ submitting: true, submitted: false, error: null });
 
-    const web3FormsKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+    const web3FormsKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || '7bd41a06-5e29-4168-8471-199f23b4a560';
 
     try {
       if (web3FormsKey) {
