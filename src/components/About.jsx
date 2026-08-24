@@ -13,6 +13,7 @@ import {
 } from 'lucide-react';
 import { LinkedinIcon, GithubIcon } from './Icons';
 import { resumeData } from '../data/resumeData';
+import profileImg from '../assets/profile.jpg';
 
 export function About() {
   return (
@@ -111,7 +112,7 @@ export function About() {
               <div className="flex items-center gap-3.5 pb-3 border-b border-slate-200/60 dark:border-slate-800/80">
                 <div className="relative">
                   <img
-                    src="/profile.jpg"
+                    src={profileImg}
                     alt={resumeData.personal.name}
                     className="w-14 h-14 rounded-2xl object-cover object-top border-2 border-brand-500/50 shadow-md"
                   />

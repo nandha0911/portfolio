@@ -17,6 +17,7 @@ import {
 } from 'lucide-react';
 import { resumeData } from '../data/resumeData';
 import { ParticleCanvas } from './ParticleCanvas';
+import profileImg from '../assets/profile.jpg';
 
 export function Hero({ isDark, onOpenChat, onOpenResume }) {
   const scrollTo = (id) => {
@@ -132,7 +133,7 @@ export function Hero({ isDark, onOpenChat, onOpenResume }) {
               <div className="w-full h-full rounded-[22px] bg-slate-900 flex flex-col justify-end p-5 text-center relative overflow-hidden border border-white/10">
                 {/* Background Photo */}
                 <img
-                  src="/profile.jpg"
+                  src={profileImg}
                   alt={resumeData.personal.name}
                   className="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                 />

@@ -10,6 +10,7 @@ import {
 } from 'lucide-react';
 import { LinkedinIcon, GithubIcon } from './Icons';
 import { resumeData } from '../data/resumeData';
+import profileImg from '../assets/profile.jpg';
 
 export function Footer({ onOpenChat, onOpenResume }) {
   const currentYear = new Date().getFullYear();
@@ -31,7 +32,7 @@ export function Footer({ onOpenChat, onOpenResume }) {
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-xl overflow-hidden border border-brand-500/40 shadow-md bg-slate-950 shrink-0">
                 <img
-                  src="/profile.jpg"
+                  src={profileImg}
                   alt={resumeData.personal.name}
                   className="w-full h-full object-cover object-top"
                 />

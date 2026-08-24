@@ -15,6 +15,7 @@ import {
   Mail
 } from 'lucide-react';
 import { resumeData } from '../data/resumeData';
+import profileImg from '../assets/profile.jpg';
 
 export function Navbar({ isDark, toggleTheme, onOpenChat, onOpenResume }) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -80,7 +81,7 @@ export function Navbar({ isDark, toggleTheme, onOpenChat, onOpenResume }) {
           >
             <div className="relative w-10 h-10 rounded-xl overflow-hidden border border-brand-500/40 shadow-md shadow-brand-500/20 group-hover:scale-105 transition-transform bg-slate-900">
               <img
-                src="/profile.jpg"
+                src={profileImg}
                 alt={resumeData.personal.name}
                 className="w-full h-full object-cover object-top"
               />
