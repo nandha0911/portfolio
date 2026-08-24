@@ -48,7 +48,7 @@ export function Hero({ isDark, onOpenChat, onOpenResume }) {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
               </span>
-              <span>Data Scientist @ Gradtwin Chennai</span>
+              <span>Data Scientist Intern @ Gradtwin Chennai</span>
               <span className="text-slate-400 dark:text-slate-500">|</span>
               <span className="text-brand-600 dark:text-cyan-400">RAG & ML Specialist</span>
             </div>
@@ -162,7 +162,7 @@ export function Hero({ isDark, onOpenChat, onOpenResume }) {
                     <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
                   </div>
                   <p className="text-xs font-mono text-cyan-300 font-semibold">
-                    Data Scientist @ Gradtwin
+                    Data Scientist Intern @ Gradtwin
                   </p>
                   <p className="text-[11px] text-slate-300">
                     BE CSE (2022–2026) | Salem, TN

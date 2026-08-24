@@ -66,7 +66,7 @@ export function About() {
               </div>
 
               <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed">
-                As a <strong>Data Scientist</strong> at <strong>Gradtwin – Chennai</strong>, I combine computer science engineering principles with advanced machine learning, predictive modeling, and natural language processing to solve real-world technical problems.
+                As a <strong>Data Scientist Intern</strong> at <strong>Gradtwin – Chennai</strong>, I combine computer science engineering principles with advanced machine learning, predictive modeling, and natural language processing to solve real-world technical problems.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
@@ -123,7 +123,7 @@ export function About() {
                     {resumeData.personal.name}
                   </h3>
                   <p className="text-xs font-mono text-cyan-600 dark:text-cyan-400 font-medium">
-                    Data Scientist @ Gradtwin
+                    Data Scientist Intern @ Gradtwin
                   </p>
                 </div>
               </div>

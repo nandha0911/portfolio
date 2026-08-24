@@ -7,7 +7,7 @@ export const resumeData = {
   personal: {
     name: "Nandha R",
     title: "Data Scientist & AI / ML Engineer",
-    role: "Data Scientist at Gradtwin-Chennai",
+    role: "Data Scientist Intern at Gradtwin-Chennai",
     location: "Chennai (Current) & Dharmapuri (Native), Tamil Nadu",
     currentLocation: "Chennai, Tamil Nadu, India",
     nativeLocation: "Dharmapuri, Tamil Nadu, India",
@@ -79,11 +79,11 @@ export const resumeData = {
 
   experience: [
     {
-      role: "Data Scientist",
+      role: "Data Scientist Intern",
       company: "Gradtwin",
       location: "Chennai, Tamil Nadu",
       period: "June 2026 – Present",
-      status: "Current Role",
+      status: "Current Internship",
       highlights: [
         "Architected end-to-end Python data pipelines, performing rigorous EDA on multi-source datasets to uncover actionable business insights for client use cases.",
         "Developed and optimized predictive modeling workflows—including regression and classification pipelines—improving forecasting accuracy through systematic feature engineering, hyperparameter tuning, and model benchmarking.",
