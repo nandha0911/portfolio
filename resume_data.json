@@ -1,11 +1,12 @@
 {
   "name": "Nandha R",
   "title": "Data Scientist",
-  "location": "Chennai (Current) & Dharmapuri (Native), Tamil Nadu",
+  "location": "Dharmapuri, Tamil Nadu",
   "current_location": "Chennai, Tamil Nadu, India",
   "native_location": "Dharmapuri, Tamil Nadu, India",
   "phone": "+91-9080086811",
   "email": "krnandha143@gmail.com",
+  "portfolio": "https://nandha0911.github.io/portfolio/",
   "linkedin": "https://linkedin.com/in/nandha-k-r",
   "github": "https://github.com/nandha0911",
   "objective": "To work in an environment offering challenging career opportunities where I can apply and enhance my skills for solving diverse technical problems.",
@@ -31,16 +32,21 @@
   ],
   "technical_skills": {
     "programming_languages": ["Java", "Python", "SQL"],
-    "ai_and_ml": ["RAG", "Predictive Modeling", "Regression", "Classification", "Feature Engineering", "Hyperparameter Tuning", "Benchmarking", "EDA", "ChromaDB", "LLM APIs", "Ollama", "Sentence Transformers", "BM25"],
+    "ai_and_ml": [
+      "AutoML", "XGBoost", "LightGBM", "CatBoost", "Scikit-learn",
+      "RAG", "ChromaDB", "Ollama", "Sentence Transformers", "BM25",
+      "Predictive Modeling", "Regression", "Classification",
+      "Feature Engineering", "Hyperparameter Tuning", "Benchmarking", "EDA"
+    ],
     "speech_and_nlp": ["Speech Recognition (SR)", "NLP", "Text-to-Speech (TTS)"],
-    "frameworks": ["FastAPI", "Streamlit"]
+    "frameworks_and_tools": ["FastAPI", "React.js", "Streamlit", "Docker", "Python Data Pipelines"]
   },
   "experience": [
     {
       "role": "Data Scientist Intern",
       "company": "Gradtwin",
       "location": "Chennai",
-      "duration": "June 2026 - Present",
+      "duration": "June 2026 - August 2026",
       "responsibilities": [
         "Architected end-to-end Python data pipelines, performing rigorous EDA on multi-source datasets to uncover actionable business insights for client use cases.",
         "Developed and optimized predictive modeling workflows—including regression and classification pipelines—improving forecasting accuracy through systematic feature engineering, hyperparameter tuning, and model benchmarking.",
@@ -52,10 +58,16 @@
   ],
   "projects": [
     {
-      "title": "Residential Property Valuation Using Machine Learning",
-      "date": "Feb-2025",
-      "objective": "House price prediction is a widely researched area in the field of data science and machine learning due to its practical importance in the real estate industry. Numerous studies have been conducted to develop models that can accurately estimate property prices based on various factors such as location, area, number of rooms, and nearby amenities.",
-      "description": "Historically, house price approximation was based chiefly on professional assessments, past performances analysis, and manual comparisons. These traditional means, though, tend to bog down when processing the increasing depth and volume of contemporary real estate information. Such is where Machine Learning (ML) prevails by assessing large data collections, discovering elusive patterns, and providing precise forecasting."
+      "title": "AI-Powered Data Cleaning and Imputation Recommendation Engine",
+      "date": "Aug-2026",
+      "objective": "DataClean-AI-Data-Cleaning-and-Imputation-Engine - An intelligent, automated data preprocessing and quality enhancement system for tabular datasets. Powered by FastAPI, React.js, Scikit-learn, XGBoost, LightGBM, CatBoost, and Docker. DataClean AI: AI-Powered Automated Data Profiling and Cleaning System.",
+      "description": "Automated Quality Detection: Autonomously detects 13+ data anomalies including missingness patterns (MCAR/MAR), multivariate outliers (IQR/Z-score/MAD), distribution skewness, and class imbalance. Hybrid AI Recommendation: Combines 30+ domain heuristic rules with a Voting Ensemble classifier (XGBoost + LightGBM + CatBoost) achieving 97.8 Percentage accuracy across 25 cleaning techniques. Scalable Streaming Engine: Implements a 10 MB chunked multipart upload pipeline handling multi-gigabyte datasets (3M+ rows) with zero-OOM memory streaming, interactive step execution, and automated PDF audit reporting."
+    },
+    {
+      "title": "PDF Summarizer Chatbot using RAG",
+      "date": "Jul-2026",
+      "objective": "Paperbrain-PDF-Summarizer-chatbot-using-RAG - A privacy-first, fully offline RAG (Retrieval-Augmented Generation) chatbot for querying PDF documents. Powered by FastAPI, Streamlit, ChromaDB, and local LLMs via Ollama. PaperBrain: AI-Powered PDF Question Answering System.",
+      "description": "This is Local and Private: No documents or chats leave your machine. Embeddings, vector storage, and language generation (via Ollama) run locally. Hybrid Search (Dense + Sparse): Fuses dense vector similarity search (Sentence Transformers) with BM25 keyword matching to deliver highly accurate context retrieval."
     },
     {
       "title": "The Voice Assistant with Desktop Accessibility",
@@ -64,10 +76,10 @@
       "description": "The assistant features state-of-the-art Speech Recognition (SR) to seamlessly convert spoken commands into text, and Natural Language Processing (NLP) to understand and interpret these commands. With Text-to-Speech (TTS) technology, it provides clear and responsive voice feedback, delivering a complete hands-free desktop experience."
     },
     {
-      "title": "PDF Summarizer Chatbot using RAG",
-      "date": "Jul-2026",
-      "objective": "Paperbrain-PDF-Summarizer-chatbot-using-RAG- A privacy-first, fully offline RAG (Retrieval-Augmented Generation) chatbot for querying PDF documents. Powered by FastAPI, Streamlit, ChromaDB, and local LLMs via Ollama. PaperBrain: AI-Powered PDF Question Answering System.",
-      "description": "This is Local and Private: No documents or chats leave your machine. Embeddings, vector storage, and language generation (via Ollama) run locally. Hybrid Search (Dense + Sparse): Fuses dense vector similarity search (Sentence Transformers) with BM25 keyword matching to deliver highly accurate context retrieval."
+      "title": "Residential Property Valuation Using Machine Learning",
+      "date": "Feb-2025",
+      "objective": "House price prediction is a widely researched area in the field of data science and machine learning due to its practical importance in the real estate industry. Numerous studies have been conducted to develop models that can accurately estimate property prices based on various factors such as location, area, number of rooms, and nearby amenities.",
+      "description": "Historically, house price approximation was based chiefly on professional assessments, past performances analysis, and manual comparisons. These traditional means, though, tend to bog down when processing the increasing depth and volume of contemporary real estate information. Such is where Machine Learning (ML) prevails by assessing large data collections, discovering elusive patterns, and providing precise forecasting."
     }
   ],
   "certificates": [
