@@ -13,13 +13,14 @@ export const resumeData = {
     nativeLocation: "Dharmapuri, Tamil Nadu, India",
     phone: "+91-9080086811",
     email: "krnandha143@gmail.com",
+    portfolio: "https://nandha0911.github.io/portfolio/",
     linkedin: "https://linkedin.com/in/nandha-k-r",
     linkedinUsername: "nandha-k-r",
     github: "https://github.com/nandha0911",
     githubUsername: "nandha0911",
     avatar: "/profile.jpg",
     objective: "To work in an environment offering challenging career opportunities where I can apply and enhance my skills for solving diverse technical problems.",
-    summary: "Data Scientist and Computer Science Engineer with hands-on expertise in architecting end-to-end Python data pipelines, building production-grade RAG AI chatbots, and training predictive machine learning models. Experienced in offline AI architectures, vector search with ChromaDB, hybrid dense+sparse retrieval, and turning complex datasets into high-impact operational solutions."
+    summary: "Data Scientist and Computer Science Engineer with hands-on expertise in building intelligent automated data cleaning systems, architecting end-to-end Python data pipelines, building production-grade RAG AI chatbots, and training predictive machine learning models. Experienced in offline AI architectures, vector search with ChromaDB, hybrid dense+sparse retrieval, and ensemble learning."
   },
 
   skills: {
@@ -50,9 +51,10 @@ export const resumeData = {
         skills: [
           { name: "Exploratory Data Analysis (EDA)", level: 94, badge: "Multi-source Datasets" },
           { name: "Predictive Modeling", level: 88, badge: "Regression & Classification" },
+          { name: "Voting Ensemble (XGBoost, LightGBM, CatBoost)", level: 92, badge: "97.8% Accuracy" },
           { name: "Systematic Feature Engineering", level: 90, badge: "Optimization" },
-          { name: "Hyperparameter Tuning", level: 85, badge: "Benchmarking" },
-          { name: "Data Cleaning & Transformation", level: 92, badge: "High-Volume Datasets" }
+          { name: "Automated Data Profiling & Imputation", level: 91, badge: "13+ Anomaly Checks" },
+          { name: "Hyperparameter Tuning", level: 85, badge: "Benchmarking" }
         ]
       },
       {
@@ -69,9 +71,11 @@ export const resumeData = {
         name: "Frameworks & Deployment",
         icon: "Layers",
         skills: [
-          { name: "FastAPI", level: 88, badge: "High-Performance APIs" },
+          { name: "FastAPI", level: 90, badge: "High-Performance APIs" },
+          { name: "React.js", level: 85, badge: "Modern UI / UX" },
           { name: "Streamlit", level: 90, badge: "Interactive AI Apps" },
-          { name: "Python Data Pipelines", level: 92, badge: "End-to-End ETL" }
+          { name: "Docker", level: 84, badge: "Containerization" },
+          { name: "Python Data Pipelines", level: 92, badge: "Chunked Streaming ETL" }
         ]
       }
     ]
@@ -82,8 +86,8 @@ export const resumeData = {
       role: "Data Scientist Intern",
       company: "Gradtwin",
       location: "Chennai, Tamil Nadu",
-      period: "June 2026 – Present",
-      status: "Current Internship",
+      period: "June 2026 – August 2026",
+      status: "Gradtwin Chennai",
       highlights: [
         "Architected end-to-end Python data pipelines, performing rigorous EDA on multi-source datasets to uncover actionable business insights for client use cases.",
         "Developed and optimized predictive modeling workflows—including regression and classification pipelines—improving forecasting accuracy through systematic feature engineering, hyperparameter tuning, and model benchmarking.",
@@ -96,6 +100,27 @@ export const resumeData = {
   ],
 
   projects: [
+    {
+      id: "dataclean-ai",
+      title: "AI-Powered Data Cleaning and Imputation Recommendation Engine",
+      date: "Aug 2026",
+      category: "Machine Learning & AutoML",
+      subtitle: "DataClean AI: AI-Powered Automated Data Profiling & Cleaning System",
+      objective: "DataClean-AI-Data-Cleaning-and-Imputation-Engine - An intelligent, automated data preprocessing and quality enhancement system for tabular datasets. Powered by FastAPI, React.js, Scikit-learn, XGBoost, LightGBM, CatBoost, and Docker.",
+      description: "Automated Quality Detection: Autonomously detects 13+ data anomalies including missingness patterns (MCAR/MAR), multivariate outliers (IQR/Z-score/MAD), distribution skewness, and class imbalance. Hybrid AI Recommendation: Combines 30+ domain heuristic rules with a Voting Ensemble classifier (XGBoost + LightGBM + CatBoost) achieving 97.8% accuracy across 25 cleaning techniques. Scalable Streaming Engine: Implements a 10 MB chunked multipart upload pipeline handling multi-gigabyte datasets (3M+ rows) with zero-OOM memory streaming, interactive step execution, and automated PDF audit reporting.",
+      keyFeatures: [
+        "Automated Quality Detection – Autonomously detects 13+ data anomalies (MCAR/MAR missingness, IQR/MAD outliers, distribution skewness, class imbalance).",
+        "Hybrid AI Recommendation – Combines 30+ domain heuristic rules with a Voting Ensemble classifier (XGBoost + LightGBM + CatBoost) achieving 97.8% accuracy.",
+        "Scalable Streaming Engine – 10 MB chunked multipart upload pipeline handling multi-gigabyte datasets (3M+ rows) with zero-OOM memory streaming.",
+        "Interactive Step Execution & PDF Audits – Interactive execution of 25 cleaning techniques with automated downloadable PDF audit reporting.",
+        "Full Production Stack – FastAPI backend, React.js frontend, and fully containerized with Docker."
+      ],
+      technologies: ["Python", "FastAPI", "React.js", "Scikit-Learn", "XGBoost", "LightGBM", "CatBoost", "Docker", "AutoML", "Data Profiling"],
+      githubUrl: "https://github.com/nandha0911/DataClean-AI-Data-Cleaning-and-Imputation-Engine",
+      liveDemoUrl: null,
+      featured: true,
+      badge: "Flagship AutoML Project"
+    },
     {
       id: "paperbrain-rag",
       title: "PDF Summarizer Chatbot Using RAG (PaperBrain)",

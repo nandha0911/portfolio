@@ -22,7 +22,7 @@ export function AIChatbot({ isOpen, onToggle }) {
     {
       id: 1,
       sender: 'bot',
-      text: `👋 Hi! I'm **Ask Me**, Nandha R's AI Assistant.\n\nI have complete knowledge of Nandha's **skills, data science experience at Gradtwin, AI/ML projects (PaperBrain RAG, Voice Assistant, Property Valuation), education, and certifications**.\n\nHow can I help you today?`,
+      text: `👋 Hi! I'm **Ask Me**, Nandha R's AI Assistant.\n\nI have complete knowledge of Nandha's **skills, data science experience at Gradtwin, AI/ML projects (DataClean AI, PaperBrain RAG, Voice Assistant, Property Valuation), education, and certifications**.\n\nHow can I help you today?`,
       timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
       action: null
     }
@@ -36,13 +36,14 @@ export function AIChatbot({ isOpen, onToggle }) {
 
   const suggestedQuestions = [
     { label: '👋 Tell me about yourself', query: 'Tell me about yourself' },
+    { label: '🧹 Tell me about DataClean AI', query: 'Tell me about the DataClean AI data cleaning and imputation recommendation engine' },
+    { label: '📄 Tell me about the RAG project', query: 'Tell me about the PaperBrain PDF Summarizer RAG chatbot' },
     { label: '🧠 What are your skills?', query: 'What are your technical skills and tools?' },
     { label: '💼 Show your projects', query: 'What projects have you worked on?' },
-    { label: '🚀 Explain your experience', query: 'Explain your experience as a Data Scientist at Gradtwin' },
+    { label: '🚀 Explain your experience', query: 'Explain your experience as a Data Scientist Intern at Gradtwin' },
     { label: '📚 Education details', query: 'What are your educational qualifications?' },
     { label: '🏆 Certifications & awards', query: 'What certifications and achievements do you have?' },
-    { label: '📞 How can I contact you?', query: 'How can I contact Nandha?' },
-    { label: '📄 Tell me about the RAG project', query: 'Tell me about the PaperBrain PDF Summarizer RAG chatbot' }
+    { label: '📞 How can I contact you?', query: 'How can I contact Nandha?' }
   ];
 
   useEffect(() => {

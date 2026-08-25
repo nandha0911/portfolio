@@ -71,10 +71,10 @@ export function About() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
                 <div className="flex items-start gap-2.5 p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-100 dark:border-slate-700/50">
-                  <CheckCircle2 className="w-4 h-4 text-brand-500 mt-0.5 shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-emerald-500 mt-0.5 shrink-0" />
                   <div>
-                    <h4 className="text-xs font-bold text-slate-900 dark:text-white">End-to-End Data Pipelines</h4>
-                    <p className="text-[11px] text-slate-500 dark:text-slate-400">EDA, multi-source ingestion & high-volume ETL in Python.</p>
+                    <h4 className="text-xs font-bold text-slate-900 dark:text-white">AutoML & Data Profiling</h4>
+                    <p className="text-[11px] text-slate-500 dark:text-slate-400">13+ anomaly detection, 97.8% voting ensemble & zero-OOM 3M+ streaming.</p>
                   </div>
                 </div>
 
@@ -87,10 +87,10 @@ export function About() {
                 </div>
 
                 <div className="flex items-start gap-2.5 p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-100 dark:border-slate-700/50">
-                  <CheckCircle2 className="w-4 h-4 text-electric-500 mt-0.5 shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-brand-500 mt-0.5 shrink-0" />
                   <div>
-                    <h4 className="text-xs font-bold text-slate-900 dark:text-white">Predictive Modeling</h4>
-                    <p className="text-[11px] text-slate-500 dark:text-slate-400">Regression, classification, systematic feature engineering & tuning.</p>
+                    <h4 className="text-xs font-bold text-slate-900 dark:text-white">End-to-End Data Pipelines</h4>
+                    <p className="text-[11px] text-slate-500 dark:text-slate-400">EDA, multi-source ingestion, and automated PDF audit reporting.</p>
                   </div>
                 </div>
 

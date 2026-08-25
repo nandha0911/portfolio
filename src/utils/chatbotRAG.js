@@ -47,11 +47,21 @@ const knowledgeBase = [
   {
     id: 'projects_general',
     category: 'projects',
-    keywords: ['project', 'projects', 'portfolio projects', 'work done', 'show projects', 'what have you built', 'what projects have you worked on'],
+    keywords: ['project', 'projects', 'portfolio projects', 'work done', 'show projects', 'what have you built', 'what projects have you worked on', 'all projects'],
     questionExamples: ['what projects have you worked on', 'show your projects', 'list all projects', 'tell me about your projects'],
     generateAnswer: () => ({
-      text: `🚀 **Featured Projects from Resume:**\n\n1. **PDF Summarizer Chatbot using RAG (PaperBrain)** (Jul 2026)\n   • Privacy-first, offline RAG system with FastAPI, Streamlit, ChromaDB, and local Ollama LLMs with Hybrid Dense + Sparse BM25 search.\n\n2. **The Voice Assistant with Desktop Accessibility** (Mar 2026)\n   • AI voice assistant with Speech Recognition (SR), NLP intent handling, and Text-to-Speech (TTS) for hands-free desktop control.\n\n3. **Residential Property Valuation Using Machine Learning** (Feb 2025)\n   • ML predictive modeling and regression analysis for accurate real estate price estimation using multi-factor feature engineering.`,
+      text: `🚀 **Featured Projects from Resume:**\n\n1. 🧹 **AI-Powered Data Cleaning & Imputation Engine (DataClean AI)** (Aug 2026)\n   • Intelligent data preprocessing system using a 97.8% accurate Voting Ensemble (XGBoost + LightGBM + CatBoost), 13+ anomaly detection, and 10 MB chunked streaming for 3M+ rows.\n\n2. 📄 **PDF Summarizer Chatbot using RAG (PaperBrain)** (Jul 2026)\n   • Privacy-first, offline RAG system with FastAPI, Streamlit, ChromaDB, and local Ollama LLMs with Hybrid Dense + Sparse BM25 search.\n\n3. 🎙️ **The Voice Assistant with Desktop Accessibility** (Mar 2026)\n   • AI voice assistant with Speech Recognition (SR), NLP intent handling, and Text-to-Speech (TTS) for hands-free desktop control.\n\n4. 🏡 **Residential Property Valuation Using Machine Learning** (Feb 2025)\n   • ML predictive modeling and regression analysis for accurate real estate price estimation using multi-factor feature engineering.`,
       action: { label: 'Browse Projects Grid', targetId: 'projects' }
+    })
+  },
+  {
+    id: 'project_dataclean',
+    category: 'projects',
+    keywords: ['dataclean', 'data clean', 'cleaning', 'imputation', 'xgboost', 'lightgbm', 'catboost', 'voting ensemble', '97.8', 'anomalies', 'outliers', 'profiling', 'streaming', 'docker', 'automl', 'data cleaning engine'],
+    questionExamples: ['tell me about dataclean ai', 'what is the data cleaning and imputation engine', 'tell me about your automl project', 'which project achieves 97.8 accuracy', 'how does dataclean ai work'],
+    generateAnswer: () => ({
+      text: `🧹 **AI-Powered Data Cleaning and Imputation Recommendation Engine (DataClean AI)** [Aug 2026]\n\n• **Objective:** Intelligent, automated data preprocessing and quality enhancement system for tabular datasets.\n• **Tech Stack:** FastAPI, React.js, Scikit-learn, XGBoost, LightGBM, CatBoost, and Docker.\n• **Core Highlights:**\n  - **Automated Quality Detection:** Autonomously detects 13+ data anomalies (MCAR/MAR missingness, IQR/Z-score/MAD outliers, distribution skewness, class imbalance).\n  - **Hybrid AI Recommendation:** Combines 30+ domain heuristic rules with a Voting Ensemble classifier (XGBoost + LightGBM + CatBoost) achieving **97.8% accuracy** across 25 cleaning techniques.\n  - **Scalable Streaming Engine:** 10 MB chunked multipart upload pipeline handling multi-gigabyte datasets (3M+ rows) with zero-OOM memory streaming and automated PDF audit reporting.`,
+      action: { label: 'View DataClean AI Project', targetId: 'projects' }
     })
   },
   {

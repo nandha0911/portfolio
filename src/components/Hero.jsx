@@ -71,12 +71,12 @@ export function Hero({ isDark, onOpenChat, onOpenResume }) {
 
             {/* Summary / Introduction from Resume */}
             <p className="text-base sm:text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-              Passionate about architecting end-to-end <span className="text-brand-600 dark:text-brand-300 font-medium">Python data pipelines</span>, developing high-precision <span className="text-brand-600 dark:text-brand-300 font-medium">predictive ML models</span>, and deploying production-grade <span className="text-brand-600 dark:text-brand-300 font-medium">RAG AI systems</span> with ChromaDB, FastAPI, and local LLMs.
+              Passionate about building intelligent <span className="text-brand-600 dark:text-brand-300 font-medium">AutoML data cleaning engines</span>, architecting end-to-end <span className="text-brand-600 dark:text-brand-300 font-medium">Python pipelines</span>, and deploying production-grade <span className="text-brand-600 dark:text-brand-300 font-medium">RAG AI systems</span> with ChromaDB, FastAPI, and local LLMs.
             </p>
 
             {/* Quick Skills Pills */}
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 pt-1 font-mono text-xs">
-              {['Python', 'Java', 'SQL', 'RAG AI', 'ChromaDB', 'FastAPI', 'Ollama', 'Predictive Modeling'].map((tech) => (
+              {['Python', 'Java', 'SQL', 'AutoML', 'DataClean AI', 'RAG AI', 'FastAPI', 'XGBoost'].map((tech) => (
                 <span
                   key={tech}
                   className="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800/80 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700/60 hover:border-brand-500/50 transition-colors"
@@ -150,7 +150,7 @@ export function Hero({ isDark, onOpenChat, onOpenResume }) {
                 {/* Micro Badge 2 (Top Right) */}
                 <div className="absolute top-4 right-4 bg-slate-900/85 border border-slate-700/80 px-2.5 py-1 rounded-lg text-[10px] font-mono text-cyan-300 flex items-center gap-1 shadow-lg backdrop-blur-md z-10">
                   <Cpu className="w-3 h-3 text-cyan-400" />
-                  <span>ML & NLP</span>
+                  <span>AutoML & ML</span>
                 </div>
 
                 {/* Bottom Overlay Info */}
@@ -174,12 +174,12 @@ export function Hero({ isDark, onOpenChat, onOpenResume }) {
             {/* Stats Grid under profile */}
             <div className="grid grid-cols-3 gap-3 w-full max-w-sm mt-6">
               <div className="p-3 rounded-2xl bg-white/70 dark:bg-dark-surface/80 border border-slate-200/80 dark:border-slate-800 text-center shadow-sm backdrop-blur-md">
-                <span className="block text-xl font-bold text-brand-600 dark:text-brand-400">3+</span>
+                <span className="block text-xl font-bold text-brand-600 dark:text-brand-400">4+</span>
                 <span className="text-[11px] text-slate-600 dark:text-slate-400 font-medium leading-tight">AI & ML Projects</span>
               </div>
               <div className="p-3 rounded-2xl bg-white/70 dark:bg-dark-surface/80 border border-slate-200/80 dark:border-slate-800 text-center shadow-sm backdrop-blur-md">
-                <span className="block text-xl font-bold text-cyan-600 dark:text-cyan-400">100%</span>
-                <span className="text-[11px] text-slate-600 dark:text-slate-400 font-medium leading-tight">Offline RAG</span>
+                <span className="block text-xl font-bold text-cyan-600 dark:text-cyan-400">97.8%</span>
+                <span className="text-[11px] text-slate-600 dark:text-slate-400 font-medium leading-tight">AutoML Accuracy</span>
               </div>
               <div className="p-3 rounded-2xl bg-white/70 dark:bg-dark-surface/80 border border-slate-200/80 dark:border-slate-800 text-center shadow-sm backdrop-blur-md">
                 <span className="block text-xl font-bold text-electric-600 dark:text-electric-400">1st 🏆</span>
