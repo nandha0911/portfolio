@@ -95,11 +95,8 @@ export function Footer() {
         </div>
 
         {/* Bottom Copyright */}
-        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 font-mono">
+        <div className="pt-6 text-center text-xs text-slate-500 font-mono">
           <p>© {currentYear} {resumeData.personal.name}. All rights reserved.</p>
-          <p className="flex items-center gap-1.5">
-            Built with React, Tailwind CSS & AI RAG Knowledge System
-          </p>
         </div>
       </div>
     </footer>
