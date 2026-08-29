@@ -142,10 +142,10 @@ export function Skills() {
                   </div>
                 </div>
 
-                {/* Bottom Pill Indicator */}
-                <div className="pt-5 mt-4 border-t border-slate-200/40 dark:border-slate-800/60 flex items-center justify-between text-[11px] text-slate-400 font-mono">
-                  <span>Resume-verified</span>
-                  <CheckCircle className="w-3.5 h-3.5 text-emerald-500" />
+                {/* Category Card Footer */}
+                <div className="pt-4 mt-4 border-t border-slate-200/40 dark:border-slate-800/60 flex items-center justify-between text-[11px] text-slate-400 font-mono">
+                  <span>{category.skills.length} Skills Included</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
                 </div>
               </div>
             );
