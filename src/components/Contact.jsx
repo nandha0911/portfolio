@@ -9,7 +9,8 @@ import {
   Copy,
   Check,
   Sparkles,
-  MessageSquare
+  MessageSquare,
+  Briefcase
 } from 'lucide-react';
 import { LinkedinIcon, GithubIcon } from './Icons';
 import { resumeData } from '../data/resumeData';
