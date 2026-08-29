@@ -136,8 +136,16 @@ export function About() {
                 <div className="flex items-center gap-3 p-3 rounded-xl bg-slate-50 dark:bg-slate-800/50">
                   <MapPin className="w-4 h-4 text-cyan-500 shrink-0" />
                   <div>
-                    <span className="text-xs text-slate-400 block font-mono">Location</span>
-                    <span className="font-medium text-slate-800 dark:text-slate-200">{resumeData.personal.location}</span>
+                    <span className="text-xs text-slate-400 block font-mono">Current Location</span>
+                    <span className="font-medium text-slate-800 dark:text-slate-200">{resumeData.personal.currentLocation}</span>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3 p-3 rounded-xl bg-slate-50 dark:bg-slate-800/50">
+                  <MapPin className="w-4 h-4 text-teal-500 shrink-0" />
+                  <div>
+                    <span className="text-xs text-slate-400 block font-mono">Native Location</span>
+                    <span className="font-medium text-slate-800 dark:text-slate-200">{resumeData.personal.nativeLocation}</span>
                   </div>
                 </div>
 

@@ -8,8 +8,8 @@ export const resumeData = {
     name: "Nandha R",
     title: "Data Scientist & AI / ML Engineer",
     role: "Data Scientist & AI / ML Engineer",
-    location: "Dharmapuri, Tamil Nadu, India",
-    currentLocation: "Dharmapuri, Tamil Nadu, India",
+    location: "Chennai (Current) & Dharmapuri (Native), Tamil Nadu",
+    currentLocation: "Chennai, Tamil Nadu, India",
     nativeLocation: "Dharmapuri, Tamil Nadu, India",
     phone: "+91-9080086811",
     email: "krnandha143@gmail.com",
@@ -261,7 +261,7 @@ export const resumeData = {
   contact: {
     email: "krnandha143@gmail.com",
     phone: "+91-9080086811",
-    location: "Dharmapuri, Tamil Nadu, India",
+    location: "Chennai (Current) & Dharmapuri (Native), Tamil Nadu",
     linkedin: "https://linkedin.com/in/nandha-k-r",
     github: "https://github.com/nandha0911",
     availableFor: "Data Science, Machine Learning, RAG/AI Solutions & Full-Time Opportunities"
