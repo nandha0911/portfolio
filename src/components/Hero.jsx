@@ -128,9 +128,9 @@ export function Hero({ isDark, onOpenChat, onOpenResume }) {
 
           {/* Right Column: Interactive AI Avatar & Quick Stats Card */}
           <div className="lg:col-span-5 flex flex-col items-center justify-center relative">
-            {/* Center Profile Visual Box */}
-            <div className="relative w-72 h-80 sm:w-80 sm:h-96 rounded-3xl p-1 bg-gradient-to-tr from-brand-500 via-cyan-400 to-electric-600 shadow-2xl shadow-brand-500/25 group">
-              <div className="w-full h-full rounded-[22px] bg-slate-900 flex flex-col justify-end p-5 text-center relative overflow-hidden border border-white/10">
+            {/* Center Profile Visual Box - Smaller and Better Proportioned */}
+            <div className="relative w-60 h-72 sm:w-64 sm:h-80 rounded-3xl p-1 bg-gradient-to-tr from-brand-500 via-cyan-400 to-electric-600 shadow-xl shadow-brand-500/20 group">
+              <div className="w-full h-full rounded-[22px] bg-slate-900 flex flex-col justify-end p-4 text-center relative overflow-hidden border border-white/10">
                 {/* Background Photo */}
                 <img
                   src={profileImg}
@@ -142,29 +142,29 @@ export function Hero({ isDark, onOpenChat, onOpenResume }) {
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
 
                 {/* Micro Badge 1 (Top Left) */}
-                <div className="absolute top-4 left-4 bg-slate-900/85 border border-slate-700/80 px-2.5 py-1 rounded-lg text-[10px] font-mono text-brand-300 flex items-center gap-1 shadow-lg backdrop-blur-md z-10">
-                  <Database className="w-3 h-3 text-brand-400" />
+                <div className="absolute top-3 left-3 bg-slate-900/85 border border-slate-700/80 px-2 py-0.5 rounded-lg text-[9px] font-mono text-brand-300 flex items-center gap-1 shadow-lg backdrop-blur-md z-10">
+                  <Database className="w-2.5 h-2.5 text-brand-400" />
                   <span>RAG & Vector DB</span>
                 </div>
 
                 {/* Micro Badge 2 (Top Right) */}
-                <div className="absolute top-4 right-4 bg-slate-900/85 border border-slate-700/80 px-2.5 py-1 rounded-lg text-[10px] font-mono text-cyan-300 flex items-center gap-1 shadow-lg backdrop-blur-md z-10">
-                  <Cpu className="w-3 h-3 text-cyan-400" />
+                <div className="absolute top-3 right-3 bg-slate-900/85 border border-slate-700/80 px-2 py-0.5 rounded-lg text-[9px] font-mono text-cyan-300 flex items-center gap-1 shadow-lg backdrop-blur-md z-10">
+                  <Cpu className="w-2.5 h-2.5 text-cyan-400" />
                   <span>AutoML & ML</span>
                 </div>
 
                 {/* Bottom Overlay Info */}
-                <div className="relative z-10 space-y-1 text-left bg-slate-900/70 p-3 rounded-2xl border border-white/10 backdrop-blur-md">
+                <div className="relative z-10 space-y-0.5 text-left bg-slate-900/75 p-2.5 rounded-xl border border-white/10 backdrop-blur-md">
                   <div className="flex items-center justify-between">
-                    <h3 className="text-lg font-bold text-white tracking-wide">
+                    <h3 className="text-base font-bold text-white tracking-wide leading-tight">
                       {resumeData.personal.name}
                     </h3>
                     <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
                   </div>
-                  <p className="text-xs font-mono text-cyan-300 font-semibold">
+                  <p className="text-[11px] font-mono text-cyan-300 font-semibold leading-tight">
                     Data Scientist Intern @ Gradtwin
                   </p>
-                  <p className="text-[11px] text-slate-300">
+                  <p className="text-[10px] text-slate-300 leading-tight">
                     BE CSE (2022–2026) | Salem, TN
                   </p>
                 </div>
@@ -172,7 +172,7 @@ export function Hero({ isDark, onOpenChat, onOpenResume }) {
             </div>
 
             {/* Stats Grid under profile */}
-            <div className="grid grid-cols-3 gap-3 w-full max-w-sm mt-6">
+            <div className="grid grid-cols-3 gap-2.5 w-full max-w-[280px] sm:max-w-xs mt-4">
               <div className="p-3 rounded-2xl bg-white/70 dark:bg-dark-surface/80 border border-slate-200/80 dark:border-slate-800 text-center shadow-sm backdrop-blur-md">
                 <span className="block text-xl font-bold text-brand-600 dark:text-brand-400">4+</span>
                 <span className="text-[11px] text-slate-600 dark:text-slate-400 font-medium leading-tight">AI & ML Projects</span>
