@@ -48,9 +48,9 @@ export function Hero({ isDark, onOpenChat, onOpenResume }) {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
               </span>
-              <span>Data Scientist Intern @ Gradtwin Chennai</span>
+              <span>Available for Opportunities</span>
               <span className="text-slate-400 dark:text-slate-500">|</span>
-              <span className="text-brand-600 dark:text-cyan-400">RAG & ML Specialist</span>
+              <span className="text-brand-600 dark:text-cyan-400">Data Scientist & AI / ML</span>
             </div>
 
             {/* Main Headline */}

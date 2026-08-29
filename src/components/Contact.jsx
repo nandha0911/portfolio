@@ -203,34 +203,34 @@ export function Contact() {
                 </button>
               </div>
 
-              {/* Current Location Card */}
+              {/* Location Card */}
               <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/60 dark:border-slate-700/60 flex items-center gap-3">
                 <div className="p-2.5 rounded-xl bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 shrink-0">
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div className="flex-1">
                   <div className="flex items-center justify-between">
-                    <span className="text-[11px] font-mono text-slate-400 block">Current Location</span>
-                    <span className="text-[10px] font-mono px-2 py-0.5 rounded-md bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 font-semibold border border-cyan-500/20">Workplace</span>
+                    <span className="text-[11px] font-mono text-slate-400 block">Location</span>
+                    <span className="text-[10px] font-mono px-2 py-0.5 rounded-md bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 font-semibold border border-cyan-500/20">Residence</span>
                   </div>
                   <span className="text-xs sm:text-sm font-semibold text-slate-800 dark:text-slate-200 block mt-0.5">
-                    {resumeData.personal.currentLocation}
+                    {resumeData.personal.location}
                   </span>
                 </div>
               </div>
 
-              {/* Native Location Card */}
+              {/* Work Availability Card */}
               <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/60 dark:border-slate-700/60 flex items-center gap-3">
                 <div className="p-2.5 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 shrink-0">
-                  <MapPin className="w-5 h-5" />
+                  <Briefcase className="w-5 h-5" />
                 </div>
                 <div className="flex-1">
                   <div className="flex items-center justify-between">
-                    <span className="text-[11px] font-mono text-slate-400 block">Native Location</span>
-                    <span className="text-[10px] font-mono px-2 py-0.5 rounded-md bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-semibold border border-emerald-500/20">Hometown</span>
+                    <span className="text-[11px] font-mono text-slate-400 block">Work Availability</span>
+                    <span className="text-[10px] font-mono px-2 py-0.5 rounded-md bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-semibold border border-emerald-500/20">Open to Relocation</span>
                   </div>
-                  <span className="text-xs sm:text-sm font-semibold text-slate-800 dark:text-slate-200 block mt-0.5">
-                    {resumeData.personal.nativeLocation}
+                  <span className="text-xs sm:text-sm font-semibold text-emerald-600 dark:text-emerald-400 block mt-0.5">
+                    Full-Time, Contract & Remote AI Roles
                   </span>
                 </div>
               </div>

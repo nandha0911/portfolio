@@ -66,7 +66,7 @@ export function About() {
               </div>
 
               <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed">
-                As a <strong>Data Scientist Intern</strong> at <strong>Gradtwin – Chennai</strong>, I combine computer science engineering principles with advanced machine learning, predictive modeling, and natural language processing to solve real-world technical problems.
+                With hands-on data science experience building production data pipelines and RAG systems at <strong>Gradtwin – Chennai</strong>, I combine computer science engineering principles with advanced machine learning, predictive modeling, and natural language processing to solve real-world technical problems.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
@@ -123,7 +123,7 @@ export function About() {
                     {resumeData.personal.name}
                   </h3>
                   <p className="text-xs font-mono text-cyan-600 dark:text-cyan-400 font-medium">
-                    Data Scientist Intern @ Gradtwin
+                    Data Scientist & AI / ML Engineer
                   </p>
                 </div>
               </div>
@@ -136,16 +136,16 @@ export function About() {
                 <div className="flex items-center gap-3 p-3 rounded-xl bg-slate-50 dark:bg-slate-800/50">
                   <MapPin className="w-4 h-4 text-cyan-500 shrink-0" />
                   <div>
-                    <span className="text-xs text-slate-400 block font-mono">Current Location (Workplace)</span>
-                    <span className="font-medium text-slate-800 dark:text-slate-200">{resumeData.personal.currentLocation}</span>
+                    <span className="text-xs text-slate-400 block font-mono">Location</span>
+                    <span className="font-medium text-slate-800 dark:text-slate-200">{resumeData.personal.location}</span>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-3 p-3 rounded-xl bg-slate-50 dark:bg-slate-800/50">
-                  <MapPin className="w-4 h-4 text-emerald-500 shrink-0" />
+                  <Briefcase className="w-4 h-4 text-emerald-500 shrink-0" />
                   <div>
-                    <span className="text-xs text-slate-400 block font-mono">Native Location (Hometown)</span>
-                    <span className="font-medium text-slate-800 dark:text-slate-200">{resumeData.personal.nativeLocation}</span>
+                    <span className="text-xs text-slate-400 block font-mono">Availability / Status</span>
+                    <span className="font-medium text-emerald-600 dark:text-emerald-400">Open to Full-Time / AI Roles</span>
                   </div>
                 </div>
 
@@ -180,14 +180,6 @@ export function About() {
                   <div>
                     <span className="text-xs text-slate-400 block font-mono">Education</span>
                     <span className="font-medium text-slate-800 dark:text-slate-200">BE Computer Science (73.76%)</span>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3 p-3 rounded-xl bg-slate-50 dark:bg-slate-800/50">
-                  <Briefcase className="w-4 h-4 text-amber-500 shrink-0" />
-                  <div>
-                    <span className="text-xs text-slate-400 block font-mono">Current Workplace</span>
-                    <span className="font-medium text-slate-800 dark:text-slate-200">Gradtwin (Chennai, Tamil Nadu)</span>
                   </div>
                 </div>
               </div>
