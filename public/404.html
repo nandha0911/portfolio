@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Redirecting...</title>
+    <script>
+      // Single Page Application redirect for GitHub Pages
+      var path = window.location.pathname;
+      var repo = '/portfolio';
+      if (path.startsWith(repo)) {
+        window.location.replace(repo + '/');
+      } else {
+        window.location.replace('/portfolio/');
+      }
+    </script>
+  </head>
+  <body>
+    <p>Redirecting to <a href="/portfolio/">Nandha R Portfolio</a>...</p>
+  </body>
+</html>
