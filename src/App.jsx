@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useTheme } from './hooks/useTheme';
+import { StartAnimation } from './components/StartAnimation';
 import { ScrollProgress } from './components/ScrollProgress';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
@@ -17,11 +18,17 @@ import { ResumeModal } from './components/ResumeModal';
 
 export function App() {
   const { theme, toggleTheme, isDark } = useTheme();
+  const [isLoading, setIsLoading] = useState(true);
   const [isChatOpen, setIsChatOpen] = useState(false);
   const [isResumeOpen, setIsResumeOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-dark-bg text-slate-900 dark:text-slate-100 flex flex-col transition-colors duration-300 relative selection:bg-brand-500 selection:text-white">
+      {/* High-Tech Intro Start Animation */}
+      {isLoading && (
+        <StartAnimation onComplete={() => setIsLoading(false)} />
+      )}
+
       {/* Top Scroll Reading Progress */}
       <ScrollProgress />
 
