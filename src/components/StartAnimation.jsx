@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Bot, Sparkles, Terminal, Cpu, Database, ChevronRight } from 'lucide-react';
-import profileImg from '../assets/profile.jpg';
 
 export function StartAnimation({ onComplete }) {
   const [progress, setProgress] = useState(0);
@@ -107,13 +106,11 @@ export function StartAnimation({ onComplete }) {
           {/* Pulsing Core Glow */}
           <div className="absolute w-28 h-28 rounded-full bg-gradient-to-tr from-teal-500/20 to-indigo-500/30 blur-md animate-pulse" />
 
-          {/* Profile Photo Centerpiece */}
-          <div className="relative w-24 h-24 rounded-full p-1 bg-gradient-to-tr from-teal-400 via-cyan-400 to-indigo-500 shadow-2xl shadow-teal-500/30 overflow-hidden">
-            <img
-              src={profileImg}
-              alt="Nandha R"
-              className="w-full h-full rounded-full object-cover object-top"
-            />
+          {/* AI Core Holographic Centerpiece */}
+          <div className="relative w-20 h-20 rounded-2xl p-0.5 bg-gradient-to-tr from-teal-400 via-cyan-400 to-indigo-500 shadow-2xl shadow-teal-500/40 flex items-center justify-center">
+            <div className="w-full h-full rounded-[14px] bg-slate-900/90 flex items-center justify-center border border-white/20 backdrop-blur-md">
+              <Bot className="w-9 h-9 text-teal-300 animate-pulse" />
+            </div>
           </div>
 
           {/* Corner Orbiting Sparkle Dot */}
