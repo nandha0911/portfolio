@@ -222,6 +222,16 @@ export const resumeData = {
   certifications: [
     {
       id: 1,
+      title: "GenAI Powered Data Analytics Job Simulation",
+      issuer: "Tata (via Forage)",
+      year: "2026",
+      category: "GenAI & Data Analytics",
+      description: "Completed practical industry tasks in exploratory data analysis and risk profiling, predicting delinquency with AI models, business data storytelling, and implementing an AI-driven collections strategy.",
+      badge: "Tata Verified 🏢",
+      verificationCode: "SFPHHSaWj4nHTiKK7"
+    },
+    {
+      id: 2,
       title: "Data Science in Python Training Program",
       issuer: "IIIT KOTTAYAM Engineering College",
       year: "2024",
@@ -230,7 +240,7 @@ export const resumeData = {
       badge: "IIIT Training"
     },
     {
-      id: 2,
+      id: 3,
       title: "Green Skill and AI Course Certification",
       issuer: "Edunet Foundation",
       year: "2025",
@@ -239,7 +249,7 @@ export const resumeData = {
       badge: "Certified Course"
     },
     {
-      id: 3,
+      id: 4,
       title: "1st Prize Winner - Kongu IPL AUCTION 2025",
       issuer: "Kongu Engineering College",
       year: "2025",
@@ -248,7 +258,7 @@ export const resumeData = {
       badge: "1st Prize Winner 🏆"
     },
     {
-      id: 4,
+      id: 5,
       title: "Paper Presentation on 'IOT in Military Security'",
       issuer: "KSR Engineering College",
       year: "2023",

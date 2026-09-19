@@ -83,9 +83,16 @@ export function Certifications() {
                 </div>
 
                 {/* Footer Tag */}
-                <div className="pt-4 mt-4 border-t border-slate-200/60 dark:border-slate-800/60 flex items-center justify-between text-xs font-mono text-slate-400">
+                <div className="pt-4 mt-4 border-t border-slate-200/60 dark:border-slate-800/60 flex flex-wrap items-center justify-between gap-2 text-xs font-mono text-slate-400">
                   <span>Category: {cert.category}</span>
-                  <CheckCircle className="w-4 h-4 text-emerald-500" />
+                  {cert.verificationCode ? (
+                    <span className="text-[11px] text-brand-600 dark:text-brand-400 font-mono flex items-center gap-1">
+                      <CheckCircle className="w-3.5 h-3.5 text-emerald-500" />
+                      ID: {cert.verificationCode}
+                    </span>
+                  ) : (
+                    <CheckCircle className="w-4 h-4 text-emerald-500" />
+                  )}
                 </div>
               </div>
             );

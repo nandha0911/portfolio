@@ -107,10 +107,10 @@ const knowledgeBase = [
   {
     id: 'certifications',
     category: 'certifications',
-    keywords: ['certificate', 'certificates', 'certifications', 'achievement', 'achievements', 'award', 'awards', 'prize', 'iiit kottayam', 'edunet', 'kongu', 'ipl auction', 'ksr', 'paper presentation', 'green skill'],
-    questionExamples: ['what certifications do you have', 'what are your achievements', 'tell me about the ipl auction prize', 'what training programs did you attend'],
+    keywords: ['certificate', 'certificates', 'certifications', 'achievement', 'achievements', 'award', 'awards', 'prize', 'tata', 'forage', 'genai', 'job simulation', 'data analytics', 'iiit kottayam', 'edunet', 'kongu', 'ipl auction', 'ksr', 'paper presentation', 'green skill'],
+    questionExamples: ['what certifications do you have', 'what are your achievements', 'tell me about your tata certification', 'what training programs did you attend'],
     generateAnswer: () => ({
-      text: `🏆 **Certifications & Key Achievements:**\n\n1. 🥇 **1st Prize Winner – Kongu Engineering College IPL AUCTION 2025**\n2. 📜 **Data Science in Python Training Program** – IIIT KOTTAYAM Engineering College\n3. 🌿 **Green Skill and AI Course Completed (2025)** – Edunet Foundation\n4. 📑 **Paper Presentation (2023)** on *IOT in Military Security* – KSR Engineering College`,
+      text: `🏆 **Certifications & Key Achievements:**\n\n1. 🏢 **GenAI Powered Data Analytics Job Simulation (Jan 2026)** – Tata Group (via Forage)\n   • *Verification ID: SFPHHSaWj4nHTiKK7*\n   • *Covered: EDA, AI Delinquency Prediction & Data Storytelling*\n2. 🥇 **1st Prize Winner – Kongu Engineering College IPL AUCTION 2025**\n3. 📜 **Data Science in Python Training Program** – IIIT KOTTAYAM Engineering College\n4. 🌿 **Green Skill and AI Course Completed (2025)** – Edunet Foundation\n5. 📑 **Paper Presentation (2023)** on *IOT in Military Security* – KSR Engineering College`,
       action: { label: 'View Certifications', targetId: 'certifications' }
     })
   },

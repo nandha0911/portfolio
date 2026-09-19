@@ -191,10 +191,11 @@ export function ResumeModal({ isOpen, onClose }) {
               CERTIFICATES & ACHIEVEMENTS
             </h2>
             <ol className="list-decimal list-outside pl-4 space-y-1 text-xs text-slate-800">
+              <li>Completed Tata (via Forage) Job Simulation (GenAI Powered Data Analytics - Jan 2026).</li>
               <li>Participated in IIIT KOTTAYAM Engineering College on training program (Data Science in Python).</li>
-              <li>Participated in KSR Engineering college Paper Presentation 2023 (IOT in military security).</li>
               <li>Won 1st prize in Kongu Engineering college IPL AUCTION 2025.</li>
               <li>Course Completed in Edunet Foundation 2025 (Green Skill and AI).</li>
+              <li>Participated in KSR Engineering college Paper Presentation 2023 (IOT in military security).</li>
             </ol>
           </div>
         </div>
