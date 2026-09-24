@@ -60,18 +60,80 @@
 
 /* Print Styles for Resume Modal */
 @media print {
-  body * {
-    visibility: hidden;
+  @page {
+    size: A4 portrait;
+    margin: 12mm 10mm;
   }
-  .print\:p-0, .print\:p-0 * {
-    visibility: visible;
+
+  html, body {
+    height: auto !important;
+    min-height: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    overflow: visible !important;
   }
-  .print\:p-0 {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    margin: 0;
-    padding: 20px;
+
+  /* Hide everything except root container */
+  body > * {
+    display: none !important;
+  }
+
+  body > #root {
+    display: block !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  #root > *:not(#resume-modal-overlay) {
+    display: none !important;
+  }
+
+  #resume-modal-overlay {
+    position: static !important;
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+    backdrop-filter: none !important;
+    overflow: visible !important;
+    z-index: 1 !important;
+  }
+
+  #resume-modal-card {
+    position: static !important;
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: #ffffff !important;
+    overflow: visible !important;
+    border-radius: 0 !important;
+  }
+
+  #resume-modal-header,
+  .no-print {
+    display: none !important;
+  }
+
+  #printable-resume {
+    display: block !important;
+    position: static !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    overflow: visible !important;
   }
 }
+

@@ -33,10 +33,19 @@ export function ResumeModal({ isOpen, onClose }) {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-slate-900/80 backdrop-blur-md animate-in fade-in">
-      <div className="relative w-full max-w-4xl max-h-[92vh] flex flex-col rounded-3xl bg-white dark:bg-dark-surface border border-slate-200 dark:border-slate-800 shadow-2xl overflow-hidden">
+    <div
+      id="resume-modal-overlay"
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-slate-900/80 backdrop-blur-md animate-in fade-in"
+    >
+      <div
+        id="resume-modal-card"
+        className="relative w-full max-w-4xl max-h-[92vh] flex flex-col rounded-3xl bg-white dark:bg-dark-surface border border-slate-200 dark:border-slate-800 shadow-2xl overflow-hidden"
+      >
         {/* Modal Top Bar */}
-        <div className="p-4 sm:px-6 bg-slate-50 dark:bg-dark-card border-b border-slate-200 dark:border-slate-800 flex items-center justify-between gap-2 shrink-0">
+        <div
+          id="resume-modal-header"
+          className="no-print p-4 sm:px-6 bg-slate-50 dark:bg-dark-card border-b border-slate-200 dark:border-slate-800 flex items-center justify-between gap-2 shrink-0"
+        >
           <div className="flex items-center gap-2">
             <span className="w-3 h-3 rounded-full bg-rose-500 inline-block"></span>
             <span className="w-3 h-3 rounded-full bg-amber-500 inline-block"></span>
@@ -47,15 +56,28 @@ export function ResumeModal({ isOpen, onClose }) {
           </div>
 
           <div className="flex items-center gap-2">
+            {/* Direct PDF Download */}
+            <a
+              href="./Nandha_R_Resume.pdf"
+              download="Nandha_R_Resume.pdf"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-gradient-to-r from-brand-500 to-teal-600 text-white text-xs font-semibold hover:opacity-95 shadow-sm transition-all"
+              title="Download Official PDF Resume"
+            >
+              <Download className="w-3.5 h-3.5" />
+              <span>Download PDF</span>
+            </a>
+
+            {/* Print / Save via Browser */}
             <button
               onClick={handlePrint}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-brand-500 text-white text-xs font-semibold hover:bg-brand-600 shadow-sm transition-all"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-semibold hover:bg-slate-300 dark:hover:bg-slate-600 transition-all"
               title="Print or Save as PDF"
             >
               <Printer className="w-3.5 h-3.5" />
-              <span className="hidden sm:inline">Print / Save PDF</span>
+              <span className="hidden sm:inline">Print / Browser PDF</span>
             </button>
 
+            {/* JSON Data Download */}
             <button
               onClick={handleDownloadJson}
               className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-semibold hover:bg-slate-300 dark:hover:bg-slate-600 transition-all"
@@ -75,7 +97,10 @@ export function ResumeModal({ isOpen, onClose }) {
         </div>
 
         {/* Formatted Printable Resume Canvas */}
-        <div className="overflow-y-auto p-6 sm:p-10 bg-white text-slate-900 space-y-6 print:p-0 print:m-0 font-sans">
+        <div
+          id="printable-resume"
+          className="overflow-y-auto p-6 sm:p-10 bg-white text-slate-900 space-y-6 font-sans"
+        >
           {/* Header */}
           <div className="border-b-2 border-slate-800 pb-4">
             <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
