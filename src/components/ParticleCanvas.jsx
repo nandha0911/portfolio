@@ -69,39 +69,42 @@ export function ParticleCanvas({ isDark }) {
         if (p.x < 0 || p.x > width) p.vx *= -1;
         if (p.y < 0 || p.y > height) p.vy *= -1;
 
-        // Mouse interaction
+        // Mouse interaction with squared distance optimization
         if (mouse.x !== null && mouse.y !== null) {
           const dx = mouse.x - p.x;
           const dy = mouse.y - p.y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < mouse.radius) {
+          const distSq = dx * dx + dy * dy;
+          const mouseRadiusSq = mouse.radius * mouse.radius;
+          if (distSq < mouseRadiusSq) {
+            const dist = Math.sqrt(distSq);
             const force = (mouse.radius - dist) / mouse.radius;
             p.x -= (dx / dist) * force * 3;
             p.y -= (dy / dist) * force * 3;
           }
         }
 
-        // Draw node
+        // Draw node (high performance without heavy canvas shadowBlur)
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
         ctx.fillStyle = p.color;
-        ctx.shadowBlur = isDark ? 8 : 4;
-        ctx.shadowColor = p.color;
         ctx.fill();
-        ctx.shadowBlur = 0;
 
-        // Connect edges
+        // Connect edges with squared distance optimization
+        const maxDist = 130;
+        const maxDistSq = maxDist * maxDist;
+
         for (let j = i + 1; j < particles.length; j++) {
           const p2 = particles[j];
           const dx = p.x - p2.x;
           const dy = p.y - p2.y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
+          const distSq = dx * dx + dy * dy;
 
-          if (dist < 130) {
+          if (distSq < maxDistSq) {
+            const dist = Math.sqrt(distSq);
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(p2.x, p2.y);
-            const opacity = 1 - dist / 130;
+            const opacity = 1 - dist / maxDist;
             ctx.strokeStyle = isDark
               ? `rgba(94, 234, 212, ${opacity * 0.25})`
               : `rgba(15, 118, 110, ${opacity * 0.18})`;

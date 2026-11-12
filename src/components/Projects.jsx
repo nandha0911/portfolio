@@ -24,8 +24,11 @@ export function Projects() {
   const categories = ['All', 'RAG & GenAI', 'Voice & Speech AI', 'Machine Learning'];
 
   const filteredProjects = resumeData.projects.filter((proj) => {
-    if (selectedCategory !== 'All' && proj.category !== selectedCategory) {
-      return false;
+    if (selectedCategory !== 'All') {
+      const matchesCategory =
+        proj.category === selectedCategory ||
+        proj.category.toLowerCase().includes(selectedCategory.toLowerCase());
+      if (!matchesCategory) return false;
     }
     if (searchQuery.trim()) {
       const q = searchQuery.toLowerCase();

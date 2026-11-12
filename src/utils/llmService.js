@@ -2,9 +2,31 @@ import { resumeData } from '../data/resumeData.js';
 import { queryResumeBot } from './chatbotRAG.js';
 
 /**
- * System prompt that enforces strict grounding on Nandha R's resume.
+ * Generate dynamically grounded system prompt from resumeData
  */
-const SYSTEM_PROMPT = `You are "Ask Me", the official AI Portfolio Assistant for Nandha R.
+function buildSystemPrompt() {
+  const expStr = resumeData.experience.map(e => `
+- Role: ${e.role} at ${e.company}, ${e.location} (${e.period}) - ${e.status}
+  Highlights:
+${e.highlights.map(h => `  * ${h}`).join('\n')}`).join('\n');
+
+  const projStr = resumeData.projects.map((p, idx) => `
+${idx + 1}. ${p.title} [${p.date}]
+   - Category: ${p.category}
+   - Objective: ${p.objective}
+   - Description: ${p.description}
+   - Tech: ${p.technologies.join(', ')}
+   - GitHub: ${p.githubUrl || 'Available on request'}`).join('\n');
+
+  const eduStr = resumeData.education.map(ed => 
+    `- ${ed.degree} (${ed.duration}), ${ed.institution}, ${ed.location} (${ed.score})`
+  ).join('\n');
+
+  const certStr = resumeData.certifications.map((c, idx) => 
+    `${idx + 1}. ${c.title} (${c.year}) - ${c.issuer}${c.verificationCode ? ` [ID: ${c.verificationCode}]` : ''}`
+  ).join('\n');
+
+  return `You are "Ask Me", the official AI Portfolio Assistant for Nandha R.
 Your job is to answer questions from recruiters and visitors about Nandha R's skills, projects, experience, education, certifications, and contact information.
 
 STRICT RULES:
@@ -20,6 +42,8 @@ Name: ${resumeData.personal.name}
 Role: ${resumeData.personal.role}
 Title: ${resumeData.personal.title}
 Location: ${resumeData.personal.location}
+Current Location: ${resumeData.personal.currentLocation}
+Native Location: ${resumeData.personal.nativeLocation}
 Email: ${resumeData.personal.email}
 Phone: ${resumeData.personal.phone}
 LinkedIn: ${resumeData.personal.linkedin}
@@ -27,47 +51,26 @@ GitHub: ${resumeData.personal.github}
 Objective: "${resumeData.personal.objective}"
 
 Experience:
-- Role: Data Scientist at Gradtwin, Chennai (June 2026 – Present)
-  Highlights:
-  * Architected end-to-end Python data pipelines, performing rigorous EDA on multi-source datasets to uncover actionable business insights for client use cases.
-  * Developed and optimized predictive modeling workflows—including regression and classification pipelines—improving forecasting accuracy through systematic feature engineering, hyperparameter tuning, and model benchmarking.
-  * Designed and deployed a production-grade RAG AI chatbot integrating LLM APIs, ChromaDB vector storage, and semantic document retrieval, enabling automated query resolution over large document corpora.
-  * Cleaned, transformed, and engineered features from complex, high-volume datasets, reducing data preprocessing time and enabling reliable data-driven strategy deployment.
-  * Collaborated cross-functionally with engineering and product teams to implement ML-driven solutions that directly improved operational efficiency and business outcomes.
+${expStr}
 
 Projects:
-1. PDF Summarizer Chatbot using RAG (PaperBrain) [Jul 2026]
-   - Objective: Privacy-first, fully offline RAG chatbot for querying PDF documents. Powered by FastAPI, Streamlit, ChromaDB, and local LLMs via Ollama. PaperBrain: AI-Powered PDF Question Answering System.
-   - Architecture: 100% Local & Private offline processing (no data leaves machine). Local embeddings, ChromaDB vector storage, Ollama local LLMs. Hybrid Search (Dense Sentence Transformers + Sparse BM25) for highly accurate context retrieval.
-   - GitHub: https://github.com/nandha0911/Paperbrain-PDF-Summarizer-chatbot-using-RAG
-
-2. The Voice Assistant with Desktop Accessibility [Mar 2026]
-   - Objective: AI-Powered Voice Assistant with Desktop Accessibility transforming how users interact with desktops.
-   - Features: Speech Recognition (SR) to convert spoken commands into text, NLP to interpret commands, Text-to-Speech (TTS) for clear responsive voice feedback delivering hands-free desktop experience.
-   - GitHub: https://github.com/nandha0911
-
-3. Residential Property Valuation Using Machine Learning [Feb 2025]
-   - Objective: Real estate house price prediction estimating property prices based on location, area, rooms, amenities.
-   - Techniques: Machine Learning assessing large data collections, discovering elusive patterns, systematic EDA, feature engineering, regression modeling.
-   - GitHub: https://github.com/nandha0911
+${projStr}
 
 Education:
-- Bachelor of Engineering in Computer Science and Engineering (2022–2026), Vinayaka Mission's Kirupananda Variyar Engineering College, Salem, Tamil Nadu (73.76%)
-- Higher Secondary School Examination (2021–2022), Government Higher Secondary School, Salem, Tamil Nadu (52.8%)
-- Secondary School Examination (2019–2020), Government Higher Secondary School, Salem, Tamil Nadu (72.5%)
+${eduStr}
 
 Technical Skills:
 - Programming Languages: Java, Python, SQL
-- AI & Machine Learning: RAG, ChromaDB, Ollama, Predictive Modeling, Regression, Classification, Feature Engineering, Hyperparameter Tuning, Benchmarking, EDA
+- AI & Machine Learning: AutoML, XGBoost, LightGBM, CatBoost, Scikit-learn, RAG, ChromaDB, Ollama, Predictive Modeling, Regression, Classification, Feature Engineering, Hyperparameter Tuning, Benchmarking, EDA
 - Speech & NLP: Speech Recognition (SR), NLP, Text-to-Speech (TTS), Sentence Transformers, BM25 Hybrid Search
-- Frameworks & Tools: FastAPI, Streamlit, Python Data Pipelines
+- Frameworks & Tools: FastAPI, React.js, Streamlit, Docker, Python Data Pipelines
 
 Certifications & Achievements:
-1. Participated in IIIT KOTTAYAM Engineering College on training program (Data Science in Python).
-2. Participated in KSR Engineering college Paper Presentation 2023 (IOT in military security).
-3. Won 1st prize in Kongu Engineering college IPL AUCTION 2025.
-4. Course Completed in Edunet Foundation 2025 (Green Skill and AI).
+${certStr}
 ----------------------`;
+}
+
+const SYSTEM_PROMPT = buildSystemPrompt();
 
 /**
  * Call Google Gemini API
@@ -75,7 +78,7 @@ Certifications & Achievements:
 async function callGeminiAPI(apiKey, userQuery, history = []) {
   const modelName = 'gemini-1.5-flash';
   const cleanKey = apiKey.trim();
-  const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${encodeURIComponent(cleanKey)}`;
+  const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent`;
 
   // Format conversation history for Gemini API
   const contents = [

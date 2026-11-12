@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   X,
   Printer,
@@ -16,6 +16,22 @@ import { LinkedinIcon, GithubIcon } from './Icons';
 import { resumeData } from '../data/resumeData';
 
 export function ResumeModal({ isOpen, onClose }) {
+  useEffect(() => {
+    if (!isOpen) return;
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') onClose();
+    };
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = originalOverflow;
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isOpen, onClose]);
+
   if (!isOpen) return null;
 
   const handlePrint = () => {
@@ -32,14 +48,18 @@ export function ResumeModal({ isOpen, onClose }) {
     downloadAnchor.remove();
   };
 
+  const pdfUrl = `${import.meta.env.BASE_URL}Nandha_R_Resume.pdf`;
+
   return (
     <div
       id="resume-modal-overlay"
-      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-slate-900/80 backdrop-blur-md animate-in fade-in"
+      onClick={onClose}
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-slate-900/80 backdrop-blur-md animate-in fade-in cursor-pointer"
     >
       <div
         id="resume-modal-card"
-        className="relative w-full max-w-4xl max-h-[92vh] flex flex-col rounded-3xl bg-white dark:bg-dark-surface border border-slate-200 dark:border-slate-800 shadow-2xl overflow-hidden"
+        onClick={(e) => e.stopPropagation()}
+        className="relative w-full max-w-4xl max-h-[92vh] flex flex-col rounded-3xl bg-white dark:bg-dark-surface border border-slate-200 dark:border-slate-800 shadow-2xl overflow-hidden cursor-default"
       >
         {/* Modal Top Bar */}
         <div
@@ -58,7 +78,7 @@ export function ResumeModal({ isOpen, onClose }) {
           <div className="flex items-center gap-2">
             {/* Direct PDF Download */}
             <a
-              href="./Nandha_R_Resume.pdf"
+              href={pdfUrl}
               download="Nandha_R_Resume.pdf"
               className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-gradient-to-r from-brand-500 to-teal-600 text-white text-xs font-semibold hover:opacity-95 shadow-sm transition-all"
               title="Download Official PDF Resume"

@@ -118,7 +118,16 @@ export function AIChatbot({ isOpen, onToggle }) {
     }
   };
 
-  // Helper to format basic markdown (bold, lists, links)
+  // Helper to safely format basic markdown without XSS vulnerabilities
+  const escapeHtml = (str) => {
+    return str
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
+  };
+
   const renderFormattedText = (content) => {
     const lines = content.split('\n');
     return (
@@ -126,8 +135,11 @@ export function AIChatbot({ isOpen, onToggle }) {
         {lines.map((line, i) => {
           if (!line.trim()) return <div key={i} className="h-1"></div>;
 
-          // Format bold **text**
-          const formatted = line.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+          // Escape HTML first to prevent XSS
+          const safeLine = escapeHtml(line);
+
+          // Safely apply bold **text** styling
+          const formatted = safeLine.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
 
           return (
             <p

@@ -67,7 +67,7 @@ export function Contact() {
 
     setFormStatus({ submitting: true, submitted: false, error: null });
 
-    const web3FormsKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || '7bd41a06-5e29-4168-8471-199f23b4a560';
+    const web3FormsKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
 
     try {
       if (web3FormsKey) {
@@ -88,7 +88,11 @@ export function Contact() {
           })
         });
 
-        const result = await res.json();
+        if (!res.ok) {
+          throw new Error(`Submission failed with HTTP ${res.status}`);
+        }
+
+        const result = await res.json().catch(() => ({ success: true }));
         if (!result.success) {
           throw new Error(result.message || 'Failed to submit form through email API');
         }

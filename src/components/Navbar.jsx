@@ -33,7 +33,9 @@ export function Navbar({ isDark, toggleTheme, onOpenChat, onOpenResume }) {
   ];
 
   useEffect(() => {
-    const handleScroll = () => {
+    let ticking = false;
+
+    const updateScrollState = () => {
       setIsScrolled(window.scrollY > 20);
 
       // Scroll Spy
@@ -48,9 +50,17 @@ export function Navbar({ isDark, toggleTheme, onOpenChat, onOpenResume }) {
           }
         }
       }
+      ticking = false;
     };
 
-    window.addEventListener('scroll', handleScroll);
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateScrollState);
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
